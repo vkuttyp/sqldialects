@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { expect, test } from "bun:test";
 
 import connector from "../../src/connectors/bun-sqlite";
 import { createDatabase } from "../../src";

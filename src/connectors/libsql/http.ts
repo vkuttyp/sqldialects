@@ -1,5 +1,5 @@
 import type { Config, Client } from "@libsql/client";
-import type { Connector, Primitive } from "kuttydb";
+import type { Connector } from "kuttydb";
 import { createClient } from "@libsql/client/http";
 import libSqlCore from "./core.ts";
 

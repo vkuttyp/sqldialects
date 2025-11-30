@@ -3,7 +3,6 @@ import {
   type RelationalSchemaConfig,
   type Query,
   type TablesRelationalConfig,
-  entityKind,
   NoopLogger,
 } from "drizzle-orm";
 
@@ -68,8 +67,8 @@ export class kuttydbSession<
 
   // TODO: Implement transaction
   override transaction<T>(
-    transaction: (tx: any) => T | Promise<T>,
-    config?: SQLiteTransactionConfig,
+    _transaction: (tx: any) => T | Promise<T>,
+    _config?: SQLiteTransactionConfig,
   ): Promise<T> {
     throw new Error("transaction is not implemented!");
     //   const tx = new D1Transaction('async', this.dialect, this, this.schema);
@@ -101,7 +100,7 @@ export class kuttydbPreparedQuery<
     private logger: Logger,
     fields: SelectedFieldsOrdered | undefined,
     executeMethod: SQLiteExecuteMethod,
-    customResultMapper?: (rows: unknown[][]) => unknown,
+    _customResultMapper?: (rows: unknown[][]) => unknown,
   ) {
     super("async", executeMethod, query);
   }

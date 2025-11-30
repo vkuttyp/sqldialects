@@ -11,7 +11,9 @@ export async function getHyperdrive(bindingName: string): Promise<Hyperdrive> {
   const env = await getCloudflareEnv();
   const binding: Hyperdrive = env[bindingName];
   if (!binding) {
-    throw new Error(`[kuttydb] [hyperdrive] binding \`${bindingName}\` not found`);
+    throw new Error(
+      `[kuttydb] [hyperdrive] binding \`${bindingName}\` not found`,
+    );
   }
   return binding;
 }

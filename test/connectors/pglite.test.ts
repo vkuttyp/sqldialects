@@ -1,6 +1,6 @@
 import { fileURLToPath } from "node:url";
 import { rm, mkdir } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
+import { dirname } from "node:path";
 import { describe } from "vitest";
 import PGlite from "../../src/connectors/pglite";
 import { testConnector } from "./_tests";
