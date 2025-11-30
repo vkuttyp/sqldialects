@@ -1,4 +1,4 @@
-name: autofix.ci
+name: autofix-ci
 on: { push: {}, pull_request: {} }
 permissions: { contents: read }
 jobs:
