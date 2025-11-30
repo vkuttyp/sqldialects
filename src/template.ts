@@ -5,7 +5,7 @@ export function sqlTemplate(
   ...values: Primitive[]
 ): [string, Primitive[]] {
   if (!isTemplateStringsArray(strings) || !Array.isArray(values)) {
-    throw new Error("[kuttydb] invalid template invocation");
+    throw new Error("[sqldialects] invalid template invocation");
   }
 
   const staticIndexes: number[] = [];

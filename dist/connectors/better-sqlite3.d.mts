@@ -1,5 +1,5 @@
 import Database from "better-sqlite3";
-import type { Connector } from "kuttydb";
+import type { Connector } from "sqldialects";
 export interface ConnectorOptions {
 	cwd?: string;
 	path?: string;

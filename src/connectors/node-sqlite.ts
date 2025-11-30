@@ -1,6 +1,6 @@
 import { resolve, dirname } from "node:path";
 import { mkdirSync } from "node:fs";
-import type { Connector, Primitive } from "kuttydb";
+import type { Connector, Primitive } from "sqldialects";
 import type { DatabaseSync, StatementSync } from "node:sqlite";
 import { BoundableStatement } from "./_internal/statement.ts";
 

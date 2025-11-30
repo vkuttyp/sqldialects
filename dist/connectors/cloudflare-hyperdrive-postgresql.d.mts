@@ -1,5 +1,5 @@
 import pg from "pg";
-import type { Connector } from "kuttydb";
+import type { Connector } from "sqldialects";
 type OmitPgConfig = Omit<pg.ClientConfig, "user" | "database" | "password" | "port" | "host" | "connectionString">;
 export type ConnectorOptions = {
 	bindingName: string;

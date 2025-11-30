@@ -1,6 +1,6 @@
 import { NoopLogger } from "drizzle-orm";
 import { SQLiteSession, SQLitePreparedQuery } from "drizzle-orm/sqlite-core";
-export class kuttydbSession extends SQLiteSession {
+export class sqldialectsSession extends SQLiteSession {
 	dialect;
 	logger;
 	constructor(db, dialect, schema, options = {}) {
@@ -13,7 +13,7 @@ export class kuttydbSession extends SQLiteSession {
 	// @ts-expect-error TODO
 	prepareQuery(query, fields, executeMethod, customResultMapper) {
 		const stmt = this.db.prepare(query.sql);
-		return new kuttydbPreparedQuery(stmt, query, this.logger, fields, executeMethod, customResultMapper);
+		return new sqldialectsPreparedQuery(stmt, query, this.logger, fields, executeMethod, customResultMapper);
 	}
 	// TODO: Implement batch
 	// TODO: Implement transaction
@@ -31,7 +31,7 @@ export class kuttydbSession extends SQLiteSession {
 		//   }
 	}
 }
-export class kuttydbPreparedQuery extends SQLitePreparedQuery {
+export class sqldialectsPreparedQuery extends SQLitePreparedQuery {
 	constructor(stmt, query, logger, fields, executeMethod, _customResultMapper) {
 		super("async", executeMethod, query);
 		this.stmt = stmt;
@@ -50,8 +50,8 @@ export class kuttydbPreparedQuery extends SQLitePreparedQuery {
 		return Promise.reject(new Error("values is not implemented!"));
 	}
 }
-// Object.defineProperty(kuttydbPreparedQuery, entityKind, {
-//   value: "kuttydbPreparedQuery",
+// Object.defineProperty(sqldialectsPreparedQuery, entityKind, {
+//   value: "sqldialectsPreparedQuery",
 //   enumerable: true,
 //   configurable: true,
 // });

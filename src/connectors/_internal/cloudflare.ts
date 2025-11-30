@@ -12,7 +12,7 @@ export async function getHyperdrive(bindingName: string): Promise<Hyperdrive> {
   const binding: Hyperdrive = env[bindingName];
   if (!binding) {
     throw new Error(
-      `[kuttydb] [hyperdrive] binding \`${bindingName}\` not found`,
+      `[sqldialects] [hyperdrive] binding \`${bindingName}\` not found`,
     );
   }
   return binding;

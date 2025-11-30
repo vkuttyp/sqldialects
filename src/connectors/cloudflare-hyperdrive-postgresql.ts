@@ -1,6 +1,6 @@
 import pg from "pg";
 
-import type { Connector, Primitive } from "kuttydb";
+import type { Connector, Primitive } from "sqldialects";
 
 import { BoundableStatement } from "./_internal/statement.ts";
 import { getHyperdrive } from "./_internal/cloudflare.ts";

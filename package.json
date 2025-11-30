@@ -1,8 +1,8 @@
 {
-  "name": "kuttydb",
+  "name": "sqldialects",
   "version": "0.0.2",
   "description": "Lightweight SQL Connector",
-  "repository": "vkuttyp/kuttydb",
+  "repository": "vkuttyp/sqldialects",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -31,7 +31,7 @@
   "scripts": {
     "build": "pnpm gen-connectors && pnpm obuild",
     "gen-connectors": "jiti scripts/gen-connectors.ts",
-    "kuttydb": "pnpm jiti src/cli",
+    "sqldialects": "pnpm jiti src/cli",
     "dev": "vitest",
     "lint": "eslint . && prettier -c src test",
     "lint:fix": "eslint . --fix && prettier -w src test",
@@ -53,7 +53,7 @@
     "@vitest/coverage-v8": "^4.0.12",
     "automd": "^0.4.2",
     "better-sqlite3": "^12.4.1",
-    "kuttydb": "link:.",
+    "sqldialects": "link:.",
     "changelogen": "^0.6.2",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.44.7",

@@ -57,7 +57,7 @@ const connectorOptionsNameAliases: Record<string, string> = {
 for (const entry of connectorEntries) {
   const pathName = entry.replace(/\.ts$/, "");
   const name = pathName.replace(/\/|\\/g, "-");
-  const subpath = `kuttydb/connectors/${pathName}`;
+  const subpath = `sqldialects/connectors/${pathName}`;
   const fullPath = join(connectorsDir, `${pathName}.ts`);
 
   const contents = await readFile(fullPath, "utf8");

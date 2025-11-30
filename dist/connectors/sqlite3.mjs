@@ -38,7 +38,7 @@ export default function nodeSqlite3Connector(opts) {
 		},
 		dispose: async () => {
 			await Promise.all([..._activeStatements].map((s) => s.finalize().catch((error) => {
-				console.warn("[kuttydb] [sqlite3] failed to finalize statement", error);
+				console.warn("[sqldialects] [sqlite3] failed to finalize statement", error);
 			})));
 			_activeStatements.clear();
 			await new Promise((resolve, reject) => _db?.close?.((error) => error ? reject(error) : resolve()));

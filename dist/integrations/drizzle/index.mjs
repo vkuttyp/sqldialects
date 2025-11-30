@@ -1,4 +1,4 @@
-import { kuttydbSession } from "./_session.mjs";
+import { sqldialectsSession } from "./_session.mjs";
 import { DefaultLogger } from "drizzle-orm/logger";
 import { BaseSQLiteDatabase, SQLiteAsyncDialect } from "drizzle-orm/sqlite-core";
 import { createTableRelationsHelpers, extractTablesRelationalConfig } from "drizzle-orm";
@@ -21,7 +21,7 @@ export function drizzle(db, config) {
 			tableNamesMap: tablesConfig.tableNamesMap
 		};
 	}
-	const session = new kuttydbSession(db, dialect, schema, logger ? { logger } : {});
+	const session = new sqldialectsSession(db, dialect, schema, logger ? { logger } : {});
 	return new BaseSQLiteDatabase(
 		"async",
 		dialect,

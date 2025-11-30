@@ -4,7 +4,7 @@ export default function cloudflareD1Connector(options) {
 		// TODO: Remove legacy __cf_env__ support in next major version
 		const binding = globalThis.__env__?.[options.bindingName] || globalThis.__cf_env__?.[options.bindingName];
 		if (!binding) {
-			throw new Error(`[kuttydb] [d1] binding \`${options.bindingName}\` not found`);
+			throw new Error(`[sqldialects] [d1] binding \`${options.bindingName}\` not found`);
 		}
 		return binding;
 	};

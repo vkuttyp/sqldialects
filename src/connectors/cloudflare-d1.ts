@@ -2,7 +2,7 @@ import type {
   D1Database,
   D1PreparedStatement as RawStatement,
 } from "@cloudflare/workers-types";
-import type { Connector, Primitive } from "kuttydb";
+import type { Connector, Primitive } from "sqldialects";
 import { BoundableStatement } from "./_internal/statement.ts";
 
 export interface ConnectorOptions {
@@ -19,7 +19,7 @@ export default function cloudflareD1Connector(
       ((globalThis as any).__cf_env__ as any)?.[options.bindingName!];
     if (!binding) {
       throw new Error(
-        `[kuttydb] [d1] binding \`${options.bindingName}\` not found`,
+        `[sqldialects] [d1] binding \`${options.bindingName}\` not found`,
       );
     }
     return binding;

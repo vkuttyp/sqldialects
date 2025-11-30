@@ -1,5 +1,5 @@
 import mysql from "mysql2/promise";
-import type { Connector } from "kuttydb";
+import type { Connector } from "sqldialects";
 type OmitMysqlConfig = Omit<mysql.ConnectionOptions, "user" | "database" | "password" | "password1" | "password2" | "password3" | "port" | "host" | "uri" | "localAddress" | "socketPath" | "insecureAuth" | "passwordSha1" | "disableEval">;
 export type ConnectorOptions = {
 	bindingName: string;

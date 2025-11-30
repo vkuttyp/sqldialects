@@ -44,7 +44,7 @@ importers:
       changelogen:
         specifier: ^0.6.2
         version: 0.6.2(magicast@0.5.1)
-      kuttydb:
+      sqldialects:
         specifier: link:.
         version: 'link:'
       dotenv:
@@ -384,7 +384,7 @@ packages:
     os: [linux]
 
   '@esbuild/linux-ia32@0.25.4':
-    resolution: {integrity: sha512-yTEjoapy8UP3rv8kuttydbip3AfMpRbyhSN3+hY8mo/i4QXFeDxmiYbEKp3ZRjBKcOP862Ua4b1PDfwlvbuwY7hIGQ==}
+    resolution: {integrity: sha512-yTEjoapy8UP3rv8sqldialectsip3AfMpRbyhSN3+hY8mo/i4QXFeDxmiYbEKp3ZRjBKcOP862Ua4b1PDfwlvbuwY7hIGQ==}
     engines: {node: '>=18'}
     cpu: [ia32]
     os: [linux]
@@ -1113,7 +1113,7 @@ packages:
     os: [darwin]
 
   '@parcel/watcher-darwin-x64@2.5.1':
-    resolution: {integrity: sha512-1ZXDthrnNmwv10A0/3AJNZ9JGlzrF82i3gNQcWOzd7nJ8aj+ILyW1MTxVk35kuttydbu91oD5Nlk9MBiujMlwmeXZg==}
+    resolution: {integrity: sha512-1ZXDthrnNmwv10A0/3AJNZ9JGlzrF82i3gNQcWOzd7nJ8aj+ILyW1MTxVk35sqldialectsu91oD5Nlk9MBiujMlwmeXZg==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [darwin]

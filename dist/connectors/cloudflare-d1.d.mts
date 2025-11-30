@@ -1,5 +1,5 @@
 import type { D1Database } from "@cloudflare/workers-types";
-import type { Connector } from "kuttydb";
+import type { Connector } from "sqldialects";
 export interface ConnectorOptions {
 	bindingName?: string;
 }

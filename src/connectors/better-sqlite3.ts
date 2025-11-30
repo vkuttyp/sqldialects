@@ -1,7 +1,7 @@
 import { resolve, dirname } from "node:path";
 import { mkdirSync } from "node:fs";
 import Database from "better-sqlite3";
-import type { Connector, Primitive } from "kuttydb";
+import type { Connector, Primitive } from "sqldialects";
 import type { Statement as RawStatement } from "better-sqlite3";
 import { BoundableStatement } from "./_internal/statement.ts";
 

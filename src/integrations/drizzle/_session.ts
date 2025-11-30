@@ -19,15 +19,15 @@ import type {
   SQLiteTransactionConfig,
 } from "drizzle-orm/sqlite-core";
 
-import type { Database, Statement } from "kuttydb";
+import type { Database, Statement } from "sqldialects";
 
 // Used as reference: https://github.com/drizzle-team/drizzle-orm/blob/main/drizzle-orm/src/d1/session.ts
 
-export interface kuttydbSessionOptions {
+export interface sqldialectsSessionOptions {
   logger?: Logger;
 }
 
-export class kuttydbSession<
+export class sqldialectsSession<
   TFullSchema extends Record<string, unknown>,
   TSchema extends TablesRelationalConfig,
 > extends SQLiteSession<"async", unknown, TFullSchema, TSchema> {
@@ -39,7 +39,7 @@ export class kuttydbSession<
     private db: Database,
     dialect: SQLiteAsyncDialect,
     private schema: RelationalSchemaConfig<TSchema> | undefined,
-    private options: kuttydbSessionOptions = {},
+    private options: sqldialectsSessionOptions = {},
   ) {
     super(dialect);
     this.logger = options.logger ?? new NoopLogger();
@@ -51,9 +51,9 @@ export class kuttydbSession<
     fields: SelectedFieldsOrdered | undefined,
     executeMethod: SQLiteExecuteMethod,
     customResultMapper?: (rows: unknown[][]) => unknown,
-  ): kuttydbPreparedQuery {
+  ): sqldialectsPreparedQuery {
     const stmt = this.db.prepare(query.sql);
-    return new kuttydbPreparedQuery(
+    return new sqldialectsPreparedQuery(
       stmt,
       query,
       this.logger,
@@ -84,7 +84,7 @@ export class kuttydbSession<
   }
 }
 
-export class kuttydbPreparedQuery<
+export class sqldialectsPreparedQuery<
   T extends PreparedQueryConfig = PreparedQueryConfig,
 > extends SQLitePreparedQuery<{
   type: "async";
@@ -122,8 +122,8 @@ export class kuttydbPreparedQuery<
   }
 }
 
-// Object.defineProperty(kuttydbPreparedQuery, entityKind, {
-//   value: "kuttydbPreparedQuery",
+// Object.defineProperty(sqldialectsPreparedQuery, entityKind, {
+//   value: "sqldialectsPreparedQuery",
 //   enumerable: true,
 //   configurable: true,
 // });

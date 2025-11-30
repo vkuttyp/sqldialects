@@ -1,4 +1,4 @@
 [[hyperdrive]]
 binding = "MYSQL"
 id = "mysql"
-# localConnectionString = "mysql://test:test@localhost:3306/kuttydb"
+# localConnectionString = "mysql://test:test@localhost:3306/sqldialects"

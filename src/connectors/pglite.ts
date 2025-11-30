@@ -4,7 +4,7 @@ import type {
   Results as PGLiteQueryResults,
 } from "@electric-sql/pglite";
 import { PGlite } from "@electric-sql/pglite";
-import type { Connector, Primitive } from "kuttydb";
+import type { Connector, Primitive } from "sqldialects";
 import { BoundableStatement } from "./_internal/statement.ts";
 
 export type ConnectorOptions = PGliteOptions;

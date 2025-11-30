@@ -9,7 +9,7 @@ describe.runIf(process.env.MYSQL_URL)("connectors: mysql2.test", () => {
       host: "localhost",
       user: "test",
       password: "test",
-      database: "kuttydb",
+      database: "sqldialects",
     }),
   });
 });
