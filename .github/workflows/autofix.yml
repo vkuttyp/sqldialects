@@ -5,11 +5,6 @@ jobs:
   autofix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - run: npm i -fg corepack && corepack enable
-      - uses: actions/setup-node@v6
-        with: { node-version: lts/*, cache: pnpm }
-      - run: pnpm install
-      - run: pnpm lint:fix
-      - uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27
-        with: { commit-message: "chore: apply automated updates" }
+      - uses: actions/checkout@v3
+      - run: cargo fmt
+      - uses: autofix-ci/action@8bc06253bec489732e5f9c52884c7cace15c0160
