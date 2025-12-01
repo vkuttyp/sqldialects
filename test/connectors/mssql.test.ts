@@ -264,7 +264,7 @@ describe.runIf(
 
     expect(jsonString).toBeDefined();
     const jsonData = JSON.parse(jsonString);
-    
+
     // WITHOUT_ARRAY_WRAPPER returns a single object, not an array
     expect(Array.isArray(jsonData)).toBe(false);
     expect(jsonData).toMatchObject({

@@ -17,13 +17,32 @@ import type { ConnectorOptions as PlanetscaleOptions } from "sqldialects/connect
 import type { ConnectorOptions as PostgreSQLOptions } from "sqldialects/connectors/postgresql";
 import type { ConnectorOptions as SQLite3Options } from "sqldialects/connectors/sqlite3";
 
-export type ConnectorName = "better-sqlite3" | "bun-sqlite" | "bun" | "cloudflare-d1" | "cloudflare-hyperdrive-mysql" | "cloudflare-hyperdrive-postgresql" | "libsql-core" | "libsql-http" | "libsql-node" | "libsql" | "libsql-web" | "mssql" | "mysql2" | "node-sqlite" | "sqlite" | "pglite" | "planetscale" | "postgresql" | "sqlite3";
+export type ConnectorName =
+  | "better-sqlite3"
+  | "bun-sqlite"
+  | "bun"
+  | "cloudflare-d1"
+  | "cloudflare-hyperdrive-mysql"
+  | "cloudflare-hyperdrive-postgresql"
+  | "libsql-core"
+  | "libsql-http"
+  | "libsql-node"
+  | "libsql"
+  | "libsql-web"
+  | "mssql"
+  | "mysql2"
+  | "node-sqlite"
+  | "sqlite"
+  | "pglite"
+  | "planetscale"
+  | "postgresql"
+  | "sqlite3";
 
 export type ConnectorOptions = {
   "better-sqlite3": BetterSQLite3Options;
   "bun-sqlite": BunSQLiteOptions;
   /** alias of bun-sqlite */
-  "bun": BunSQLiteOptions;
+  bun: BunSQLiteOptions;
   "cloudflare-d1": CloudflareD1Options;
   "cloudflare-hyperdrive-mysql": CloudflareHyperdriveMySQLOptions;
   "cloudflare-hyperdrive-postgresql": CloudflareHyperdrivePostgreSQLOptions;
@@ -31,40 +50,42 @@ export type ConnectorOptions = {
   "libsql-http": LibSQLHttpOptions;
   "libsql-node": LibSQLNodeOptions;
   /** alias of libsql-node */
-  "libsql": LibSQLNodeOptions;
+  libsql: LibSQLNodeOptions;
   "libsql-web": LibSQLWebOptions;
-  "mssql": MSSQLOptions;
-  "mysql2": MySQL2Options;
+  mssql: MSSQLOptions;
+  mysql2: MySQL2Options;
   "node-sqlite": NodeSQLiteOptions;
   /** alias of node-sqlite */
-  "sqlite": NodeSQLiteOptions;
-  "pglite": PgliteOptions;
-  "planetscale": PlanetscaleOptions;
-  "postgresql": PostgreSQLOptions;
-  "sqlite3": SQLite3Options;
+  sqlite: NodeSQLiteOptions;
+  pglite: PgliteOptions;
+  planetscale: PlanetscaleOptions;
+  postgresql: PostgreSQLOptions;
+  sqlite3: SQLite3Options;
 };
 
 export const connectors: Record<ConnectorName, string> = Object.freeze({
   "better-sqlite3": "sqldialects/connectors/better-sqlite3",
   "bun-sqlite": "sqldialects/connectors/bun-sqlite",
   /** alias of bun-sqlite */
-  "bun": "sqldialects/connectors/bun-sqlite",
+  bun: "sqldialects/connectors/bun-sqlite",
   "cloudflare-d1": "sqldialects/connectors/cloudflare-d1",
-  "cloudflare-hyperdrive-mysql": "sqldialects/connectors/cloudflare-hyperdrive-mysql",
-  "cloudflare-hyperdrive-postgresql": "sqldialects/connectors/cloudflare-hyperdrive-postgresql",
+  "cloudflare-hyperdrive-mysql":
+    "sqldialects/connectors/cloudflare-hyperdrive-mysql",
+  "cloudflare-hyperdrive-postgresql":
+    "sqldialects/connectors/cloudflare-hyperdrive-postgresql",
   "libsql-core": "sqldialects/connectors/libsql/core",
   "libsql-http": "sqldialects/connectors/libsql/http",
   "libsql-node": "sqldialects/connectors/libsql/node",
   /** alias of libsql-node */
-  "libsql": "sqldialects/connectors/libsql/node",
+  libsql: "sqldialects/connectors/libsql/node",
   "libsql-web": "sqldialects/connectors/libsql/web",
-  "mssql": "sqldialects/connectors/mssql",
-  "mysql2": "sqldialects/connectors/mysql2",
+  mssql: "sqldialects/connectors/mssql",
+  mysql2: "sqldialects/connectors/mysql2",
   "node-sqlite": "sqldialects/connectors/node-sqlite",
   /** alias of node-sqlite */
-  "sqlite": "sqldialects/connectors/node-sqlite",
-  "pglite": "sqldialects/connectors/pglite",
-  "planetscale": "sqldialects/connectors/planetscale",
-  "postgresql": "sqldialects/connectors/postgresql",
-  "sqlite3": "sqldialects/connectors/sqlite3",
+  sqlite: "sqldialects/connectors/node-sqlite",
+  pglite: "sqldialects/connectors/pglite",
+  planetscale: "sqldialects/connectors/planetscale",
+  postgresql: "sqldialects/connectors/postgresql",
+  sqlite3: "sqldialects/connectors/sqlite3",
 } as const);
